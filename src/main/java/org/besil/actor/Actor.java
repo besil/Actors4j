@@ -5,7 +5,6 @@ import java.lang.reflect.Method;
 import java.util.logging.Logger;
 
 import org.besil.actor.communication.CommunicationStrategy;
-import org.besil.actor.exceptions.AnonymousSenderException;
 import org.besil.messages.ActorMessage;
 import org.besil.messages.DeathMessage;
 
@@ -74,9 +73,6 @@ public abstract class Actor implements Runnable {
 				| InvocationTargetException e) {
 			log.warning("No handler found for message " + o.getClass());
 			e.printStackTrace();
-			if (e.getCause() instanceof AnonymousSenderException) {
-				throw (AnonymousSenderException) e.getCause();
-			}
 		}
 	}
 
