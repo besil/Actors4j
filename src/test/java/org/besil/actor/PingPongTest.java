@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import org.besil.actor.Actor;
 import org.besil.actor.impl.LocalActor;
 import org.besil.messages.ActorMessage;
+import org.besil.messages.ActorMessageWithSender;
 import org.junit.Test;
 
 public class PingPongTest {
@@ -32,29 +33,16 @@ public class PingPongTest {
 		}
 	}
 	
-	class Ping implements ActorMessage {
-		private PingActor sender;
-
+	class Ping extends ActorMessageWithSender {
 		public Ping(PingActor pingActor) {
-			this.sender = pingActor;
-		}
-		
-		@Override
-		public Actor getSender() {
-			return this.sender;
+			super(pingActor);
 		}
 		
 	}
 	
-	class Pong implements ActorMessage {
-		private PongActor sender;
-
+	class Pong extends ActorMessageWithSender {
 		public Pong(PongActor pongActor) {
-			this.sender = pongActor;
-		}
-		@Override
-		public Actor getSender() {
-			return this.sender;
+			super(pongActor);
 		}
 	}
 	
