@@ -45,19 +45,20 @@ class PingActor extends LocalActor {
 		log.info("Ping");
 		start.getOther().send(new Ping(this));
 	}
-	public void receive(Pong pong) throws InterruptedException {
+	public void receive(Pong pong) {
+		pingCount++;
 		log.info("Ping");
-		Thread.sleep(1000);
 		pong.getSender().send(new Ping(this));
 	}
 }
+```
 
+```java
 class PongActor extends LocalActor {
 	int pongCount = 0;
-	public void receive(Ping ping) throws InterruptedException {
+	public void receive(Ping ping) {
 		pongCount++;
 		log.info("Pong");
-		Thread.sleep(1000);
 		ping.getSender().send(new Pong(this));
 	}
 }
