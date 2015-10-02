@@ -34,14 +34,14 @@ public class PingPongTest {
 	}
 	
 	class Ping extends ActorMessageWithSender {
-		public Ping(PingActor sender) {
+		public Ping(Actor sender) {
 			super(sender);
 		}
 		
 	}
 	
 	class Pong extends ActorMessageWithSender {
-		public Pong(PongActor sender) {
+		public Pong(Actor sender) {
 			super(sender);
 		}
 	}
