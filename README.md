@@ -14,13 +14,17 @@ class Ping extends ActorMessageWithSender {
 	}
 	
 }
-	
+```
+
+```java
 class Pong extends ActorMessageWithSender {
 	public Pong(PongActor pongActor) {
 		super(pongActor);
 	}
 }
-	
+```
+
+```java	
 class StartMex implements ActorMessage {
 	private Actor other;
 	public StartMex(Actor other) {
