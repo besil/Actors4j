@@ -3,7 +3,25 @@ A lightweight, simple and efficient thread message passing library for Java.
 
 Inspired by Akka, designed for Java.
 
-## Quickstart
+### Installation
+
+Download and install locally the project
+```bash
+git clone https://github.com/besil/actors4j.git
+cd actors4j
+mvn clean install -DskipTests
+```
+
+Now you can include it in your pom.xml
+```xml
+<dependency>
+    <groupId>org.besil</groupId>
+    <artifactId>actors4j</artifactId>
+    <version>0.0.1</version>
+</dependency>
+```
+
+### Quickstart
 
 Define your messages
 
