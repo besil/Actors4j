@@ -7,7 +7,7 @@ Inspired by Akka, designed for Java.
 
 Define your messages
 
-```
+```java
 class Ping extends ActorMessageWithSender {
 	public Ping(PingActor pingActor) {
 		super(pingActor);
@@ -33,7 +33,7 @@ class StartMex implements ActorMessage {
 ```
 
 Define your actors
-```
+```java
 class PingActor extends LocalActor {
 	int pingCount = 0;
 	public void receive(StartMex start) {
@@ -61,7 +61,7 @@ class PongActor extends LocalActor {
 
 Use them!
 
-```
+```java
 PingActor pinger = new PingActor();
 PongActor ponger = new PongActor();
 
