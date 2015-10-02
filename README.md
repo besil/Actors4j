@@ -30,7 +30,6 @@ class Ping extends ActorMessageWithSender {
 	public Ping(Actor sender) {
 		super(sender);
 	}
-	
 }
 ```
 
