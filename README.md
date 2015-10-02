@@ -10,7 +10,7 @@ Define your messages
 ```java
 class Ping extends ActorMessageWithSender {
 	public Ping(PingActor sender) {
-		super(pingActor);
+		super(sender);
 	}
 	
 }
@@ -19,7 +19,7 @@ class Ping extends ActorMessageWithSender {
 ```java
 class Pong extends ActorMessageWithSender {
 	public Pong(PongActor sender) {
-		super(pongActor);
+		super(sender);
 	}
 }
 ```
